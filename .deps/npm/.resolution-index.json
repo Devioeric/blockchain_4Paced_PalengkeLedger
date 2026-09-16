@@ -1,0 +1,18 @@
+{
+  "PalengkeLedger.sol": {
+    "__sources__": {
+      "PalengkeLedger.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\ncontract PalengkeLedger {\r\nfunction recordSale(\r\naddress _vendor,\r\nstring memory _vendorName,\r\nuint256 _saleAmount\r\n) public {}\r\nfunction isTransactionSuccessful()\r\npublic\r\nview\r\nreturns (bool)\r\n{}\r\n}",
+        "file": "PalengkeLedger.sol"
+      }
+    }
+  },
+  "contracts/PalengkeLedger.sol": {
+    "__sources__": {
+      "contracts/PalengkeLedger.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\ncontract PalengkeLedger {\r\n\r\n// PalengkeLedger Smart Contract Hands-On Laboratory\r\n\r\nstring public vendorName;\r\nuint256 public totalSales;\r\nbool public transactionStatus;\r\nmapping(address => uint256) public vendorSales;\r\nfunction recordSale(\r\naddress _vendor,\r\nstring memory _vendorName,\r\nuint256 _saleAmount\r\n) public {\r\nvendorName = _vendorName;\r\ntotalSales += _saleAmount;\r\nvendorSales[_vendor] += _saleAmount;\r\ntransactionStatus = true;\r\n}\r\nfunction isTransactionSuccessful()\r\npublic\r\nview\r\nreturns (bool)\r\n{\r\nreturn transactionStatus;\r\n}\r\n}",
+        "file": "contracts/PalengkeLedger.sol"
+      }
+    }
+  }
+}
